@@ -1,0 +1,4 @@
+/node_modules
+
+# Hide secret variables
+config.json
