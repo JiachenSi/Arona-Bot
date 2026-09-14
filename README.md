@@ -1,11 +1,21 @@
-A simple discord bot for learning how to program discord bots
+### Introduction
+Arona-Bot aims to simulate multiple features of Blue Archive within a discord server, including:
+- Gacha simulation
+- Collecting Students
+- Collecting Energy, Pyroxenes and Credits
+- Daily and Weekly rewards
 
-### Slash Commands:
-| Command | Description |
-| --- | --- |
-| /ping | Responds in a whimsy way |
-| /user | Provides info on the user who called the command |
-| /server | Provides info about the server |
+### Data Retrieval
+Using the publicly available bluearchive.wiki API and `axios` and `cheerio`, the bot retrieves all information about students, including:
+- Icons
+- Favor Titles
+- Personal Information
 
-### Other Features
-Players can gain exp and level up when they send messages
+As favor title are stored as segmented pieces in the API, `sharp` is used to compose the favor titles.
+
+Currently, data retrieval is performed using:
+```
+node .\utility\dataScrape.js
+```
+
+### Slash Commands
