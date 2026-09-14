@@ -5,7 +5,8 @@ const constructImages = async (studentList) => {
 	const macrons = [257, 299, 363, 275, 333];
 	const students = Object.keys(studentList);
 	for (const student of students) {
-		if (favorTitleSkipList.includes(student.replaceAll(' ', '_'))) {
+		const studentName = student.replaceAll(' ', '_');
+		if (favorTitleSkipList.includes(studentName)) {
 			continue;
 		}
 
@@ -42,11 +43,10 @@ const constructImages = async (studentList) => {
         `;
 		const textImage = await sharp(Buffer.from(svg)).toBuffer();
 
-		const studentName = student.replaceAll(' ', '_');
-		const studentImg = `./images/emblems/studentImages/Emblem_Icon_Favor_${studentName.replaceAll(' ', '_')}.png`;
+		const studentImg = `./images/emblems/studentImages/Emblem_Icon_Favor_${studentName}.png`;
 		const levels = ['20', '50', '100'];
 		for (const level of levels) {
-			const path = `./images/emblems/favorTitles/${student}_Favor_Title_(${level}).png`;
+			const path = `./images/emblems/favorTitles/${studentName}_Favor_Title_(${level}).png`;
 			await sharp(`./images/emblems/backgrounds/${level}.png`)
 				.composite([
 					{ input: studentImg, top: 3, left: 4 },
