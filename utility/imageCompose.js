@@ -1,10 +1,14 @@
 const sharp = require('sharp');
-const studentList = require('./releasedStudents.json');
+const { favorTitleSkipList } = require('./favorTitleSkipList.js');
 
-const constructImages = async () => {
+const constructImages = async (studentList) => {
 	const macrons = [257, 299, 363, 275, 333];
 	const students = Object.keys(studentList);
 	for (const student of students) {
+		if (favorTitleSkipList.includes(student.replaceAll(' ', '_'))) {
+			continue;
+		}
+
 		let fullname = studentList[student]['full name'];
 		let i = 0;
 		for (i; i < fullname.length; i++) {
@@ -39,7 +43,7 @@ const constructImages = async () => {
 		const textImage = await sharp(Buffer.from(svg)).toBuffer();
 
 		const studentName = student.replaceAll(' ', '_');
-		const studentImg = `./images/emblems/studentImages/Emblem_Icon_Favor_${studentName}.png`;
+		const studentImg = `./images/emblems/studentImages/Emblem_Icon_Favor_${studentName.replaceAll(' ', '_')}.png`;
 		const levels = ['20', '50', '100'];
 		for (const level of levels) {
 			const path = `./images/emblems/favorTitles/${student}_Favor_Title_(${level}).png`;

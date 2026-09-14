@@ -1,7 +1,8 @@
 const fs = require('node:fs');
 const axios = require('axios');
 const cheerio = require('cheerio');
-const { constructImages } = require('./utility/imageCompose');
+const { constructImages } = require('./imageCompose.js');
+const { favorTitleSkipList } = require('./favorTitleSkipList.js');
 let releasedStudents = null;
 let unreleasedStudents = null;
 
@@ -58,6 +59,7 @@ const fetchStudentInfo = async () => {
 					const field = row.find('td').text().trim();
 					student[header] = field;
 				});
+				console.log(`fetched - ${title} info`);
 
 				// Find name of the icon png
 				const iconFileName = `Portrait_${title.replaceAll(' ', '_')}.png`;
@@ -76,6 +78,7 @@ const fetchStudentInfo = async () => {
 						},
 					});
 					fs.writeFileSync(path, iconBuffer.data);
+					console.log(`fetched - ${title} portrait`);
 				}
 
 				student['icon'] = path;
@@ -173,11 +176,16 @@ const fetchFavorTitleBgs = async () => {
 const fetchFavorTitleIcons = async () => {
 	// Import student info list
 	const studentList = { ...releasedStudents, ...unreleasedStudents };
-	const students = Object.keys(studentList).map((name) => name.replace(' ', '_'));
+	const students = Object.keys(studentList).map((name) => name.replaceAll(' ', '_'));
 
 	// Fetch favor title student images
 	const favorTitleStudentImages = {};
 	for (const student of students) {
+		// Skip as no favor title exists
+		if (favorTitleSkipList.includes(student)) {
+			continue;
+		}
+
 		const studentImg = {};
 		const imageName = `Emblem_Icon_Favor_${student.replaceAll(' ', '_')}.png`;
 		const path = `images/emblems/studentImages/${imageName}`;
@@ -198,6 +206,7 @@ const fetchFavorTitleIcons = async () => {
 		fs.writeFileSync(path, studentImgBuffer.data);
 		studentImg.path = path;
 		favorTitleStudentImages[student] = studentImg;
+		console.log(`fetched - ${imageName}`);
 	}
 	fs.writeFileSync('./images/emblems/favorTitleStudentImages.json', JSON.stringify(favorTitleStudentImages));
 	console.log('Fetched favor title student icons');
@@ -207,12 +216,24 @@ const fetchAndConstructFavorTitles = async () => {
 	try {
 		await fetchFavorTitleBgs();
 		await fetchFavorTitleIcons();
-		await constructImages();
+		await constructImages({ ...releasedStudents, ...unreleasedStudents });
 	}
 	catch (error) {
 		console.log(error);
 	}
 };
 
-fetchStudentInfo();
-fetchAndConstructFavorTitles();
+const fetch = async () => {
+	// Create require image folder structure
+	fs.mkdirSync('images', { recursive: true });
+	fs.mkdirSync('images/emblems', { recursive: true });
+	fs.mkdirSync('images/emblems/backgrounds', { recursive: true });
+	fs.mkdirSync('images/emblems/favorTitles', { recursive: true });
+	fs.mkdirSync('images/emblems/studentImages', { recursive: true });
+
+	// Scrape
+	await fetchStudentInfo();
+	await fetchAndConstructFavorTitles();
+};
+
+fetch();
