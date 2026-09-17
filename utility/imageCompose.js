@@ -1,7 +1,9 @@
 const sharp = require('sharp');
+const fs = require('node:fs');
 const { favorTitleSkipList } = require('./favorTitleSkipList.js');
 
 const constructImages = async (studentList) => {
+	const favorTitles = {};
 	const macrons = [257, 299, 363, 275, 333];
 	const students = Object.keys(studentList);
 	for (const student of students) {
@@ -45,6 +47,7 @@ const constructImages = async (studentList) => {
 
 		const studentImg = `./images/emblems/studentImages/Emblem_Icon_Favor_${studentName}.png`;
 		const levels = ['20', '50', '100'];
+		const paths = {};
 		for (const level of levels) {
 			const path = `./images/emblems/favorTitles/${studentName}_Favor_Title_(${level}).png`;
 			await sharp(`./images/emblems/backgrounds/${level}.png`)
@@ -57,9 +60,12 @@ const constructImages = async (studentList) => {
 					},
 				])
 				.toFile(path);
+			paths[level] = path;
 			console.log(`Created - ${path}`);
 		}
+		favorTitles[student] = paths;
 	}
+	fs.writeFileSync('./utility/favorTitles.json', JSON.stringify(favorTitles));
 };
 
 module.exports = {

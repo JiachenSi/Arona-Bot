@@ -213,27 +213,30 @@ const fetchFavorTitleIcons = async () => {
 };
 
 const fetchAndConstructFavorTitles = async () => {
-	try {
-		await fetchFavorTitleBgs();
-		await fetchFavorTitleIcons();
-		await constructImages({ ...releasedStudents, ...unreleasedStudents });
-	}
-	catch (error) {
-		console.log(error);
-	}
+	await fetchFavorTitleBgs();
+	await fetchFavorTitleIcons();
+	await constructImages({ ...releasedStudents, ...unreleasedStudents });
 };
 
 const fetch = async () => {
-	// Create require image folder structure
-	fs.mkdirSync('images', { recursive: true });
-	fs.mkdirSync('images/emblems', { recursive: true });
-	fs.mkdirSync('images/emblems/backgrounds', { recursive: true });
-	fs.mkdirSync('images/emblems/favorTitles', { recursive: true });
-	fs.mkdirSync('images/emblems/studentImages', { recursive: true });
+	try {
+		// Create require image folder structure
+		fs.mkdirSync('images', { recursive: true });
+		fs.mkdirSync('images/emblems', { recursive: true });
+		fs.mkdirSync('images/emblems/backgrounds', { recursive: true });
+		fs.mkdirSync('images/emblems/favorTitles', { recursive: true });
+		fs.mkdirSync('images/emblems/studentImages', { recursive: true });
 
-	// Scrape
-	await fetchStudentInfo();
-	await fetchAndConstructFavorTitles();
+		// Scrape
+		await fetchStudentInfo();
+		await fetchAndConstructFavorTitles();
+		return true;
+	}
+	catch (e) {
+		console.log(`Fetch failed: ${e.message}`);
+		return false;
+	}
+
 };
 
 fetch();
