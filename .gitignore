@@ -3,3 +3,5 @@
 
 # Hide secret variables
 config.json
+./utility/releasedStudents.json
+./utility/unreleasedStudents.json

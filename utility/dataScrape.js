@@ -48,6 +48,9 @@ const fetchStudentInfo = async () => {
 				// Extract text data from student page
 				const studentPageResponse = await axios.get(`https://bluearchive.wiki/w/api.php?action=parse&pageid=${pageId}&format=json&prop=text`);
 				const page = cheerio.load(studentPageResponse.data.parse.text['*']);
+				const regularElement = page('li:contains("Regular Gacha pool")');
+				const archiveElement = page('li:contains("Archive Recruitment")');
+				student.regular = regularElement.length == 1 || archiveElement.length == 1 ? true : false;
 
 				const [ school, club ] = page('table tr:nth-child(4) td:first-child').attr('title').split(', ');
 				student.school = school;
@@ -242,4 +245,5 @@ const fetch = async () => {
 
 };
 
-fetch();
+// fetch();
+fetchStudentInfo();

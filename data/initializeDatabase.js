@@ -1,17 +1,23 @@
 const { db } = require('./dbConnection.js');
 const { favorTitleSkipList } = require('../utility/favorTitleSkipList.js');
+const banner = require('../data/seed/bannerSeed.json');
+const bannerStudent = require('../data/seed/bannerStudent.json');
+const users = require('../data/seed/userSeed.json');
+const userStudent = require('../data/seed/userStudentSeed.json');
 
 const createDB = () => {
 	// Schema Setup
 	const createSQL = `
     CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY NOT NULL UNIQUE,
-        name VARCHAR(50) NOT NULL
+        name VARCHAR(50) NOT NULL,
+        pulls INTEGER NOT NULL DEFAULT 0
     );
 
     CREATE TABLE IF NOT EXISTS students (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         title VARCHAR(40) NOT NULL,
+        is_regular INTEGER NOT NULL CHECK (is_regular IN (0, 1)) DEFAULT 1,
         school VARCHAR(30) NOT NULL,
         club VARCHAR(30) NOT NULL,
         fullname VARCHAR(40) NOT NULL,
@@ -48,14 +54,34 @@ const createDB = () => {
     CREATE TABLE IF NOT EXISTS user_student (
         user_id INTEGER NOT NULL,
         student_id INTEGER NOT NULL,
-        copies INTEGER NOT NULL DEFAULT 0 CHECK (copies >= 0),
+        copies INTEGER NOT NULL DEFAULT 1 CHECK (copies >= 1),
         FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE,
         FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
         PRIMARY KEY(user_id, student_id)
+    );
+    
+    CREATE TABLE IF NOT EXISTS banners (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name VARCHAR(50) NOT NULL,
+        type VARCHAR(50) NOT NULL CHECK (type in ('regular', 'limited', 'fest', 'special')),
+        start_date DATE NOT NULL,
+        end_date DATE NOT NULL
+    );
+    
+    CREATE TABLE IF NOT EXISTS banner_student (
+        banner_id INTEGER NOT NULL,
+        student_id INTEGER NOT NULL,
+        FOREIGN KEY (banner_id) REFERENCES banners(id) ON DELETE CASCADE, 
+        FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE,
+        PRIMARY KEY(banner_id, student_id)
     );`;
 
 	// Create the database
 	db.exec(createSQL);
+};
+
+const insertTestData = () => {
+
 };
 
 // Only used when database is empty, AKA Fresh install
@@ -70,13 +96,14 @@ const insertScrapedData = (students, favorTitles) => {
 				student.fullname = student['full name'];
 				student.release_date_jp = student['release date jp'];
 				student.release_date_gl = student['release date gl'];
+			    student.is_regular = student.regular ? '1' : '0';
 
 				const insertStudent = db.prepare(`
                     INSERT INTO students (
-                        title, school, club, fullname, age, birthday, height, hobbies, rarity,
+                        title, is_regular, school, club, fullname, age, birthday, height, hobbies, rarity,
                         designer, illustrator, voice, release_date_jp, release_date_gl, icon
                     ) VALUES (
-                        @title, @school, @club, @fullname, @age, @birthday, @height, @hobbies, @rarity,
+                        @title, @is_regular, @school, @club, @fullname, @age, @birthday, @height, @hobbies, @rarity,
                         @designer, @illustrator, @voice, @release_date_jp, @release_date_gl, @icon
                 )`);
 				const info = insertStudent.run(student);
@@ -100,7 +127,21 @@ const insertScrapedData = (students, favorTitles) => {
 	}
 };
 
+const deleteTables = () => {
+	const SQL = `
+        DROP TABLE IF EXISTS banner_student;
+        DROP TABLE IF EXISTS user_student;
+        DROP TABLE IF EXISTS users;
+        DROP TABLE IF EXISTS students;
+        DROP TABLE IF EXISTS favor_titles;
+        DROP TABLE IF EXISTS wallets;
+        DROP TABLE IF EXISTS banners;
+    `;
+	db.exec(SQL);
+};
+
 const initializeDatabase = () => {
+	deleteTables();
 	createDB();
 
 	// Insert students and favor titles

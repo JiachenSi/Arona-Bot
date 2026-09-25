@@ -1,0 +1,18 @@
+[
+	{
+		"banner_id": 1,
+		"student_id": 4
+	},
+	{
+		"banner_id": 1,
+		"student_id": 5
+	},
+	{
+		"banner_id": 2,
+		"student_id": 7
+	},
+	{
+		"banner_id": 2,
+		"student_id": 8
+	}
+]
