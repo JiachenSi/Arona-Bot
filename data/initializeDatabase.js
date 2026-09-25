@@ -1,6 +1,5 @@
-const Database = require('better-sqlite3');
-const db = new Database('arona_bot.db');
-db.pragma('foreign_keys = ON');
+const { db } = require('./dbConnection.js');
+const { favorTitleSkipList } = require('../utility/favorTitleSkipList.js');
 
 const createDB = () => {
 	// Schema Setup
@@ -20,6 +19,7 @@ const createDB = () => {
         birthday VARCHAR(30) NOT NULL,
         height INTEGER NOT NULL CHECK (height > 0),
         hobbies VARCHAR(150) NOT NULL,
+        rarity INTEGER NOT NULL CHECK (rarity BETWEEN 1 AND 3),
         designer VARCHAR(40) NOT NULL,
         illustrator VARCHAR(40) NOT NULL,
         voice VARCHAR(30) NOT NULL,
@@ -63,18 +63,25 @@ const insertScrapedData = (students, favorTitles) => {
 	try {
 		const dbTransaction = db.transaction(() => {
 			for (const student of Object.values(students)) {
+				if (favorTitleSkipList.includes(student.title.replaceAll(' ', '_'))) {
+					continue;
+				}
+
+				student.fullname = student['full name'];
+				student.release_date_jp = student['release date jp'];
+				student.release_date_gl = student['release date gl'];
+
 				const insertStudent = db.prepare(`
                     INSERT INTO students (
-                        title, school, club, fullname, age, birthday, height, hobbies,
+                        title, school, club, fullname, age, birthday, height, hobbies, rarity,
                         designer, illustrator, voice, release_date_jp, release_date_gl, icon
                     ) VALUES (
-                        @title, @school, @club, @fullname, @age, @birthday, @height, @hobbies,
+                        @title, @school, @club, @fullname, @age, @birthday, @height, @hobbies, @rarity,
                         @designer, @illustrator, @voice, @release_date_jp, @release_date_gl, @icon
                 )`);
 				const info = insertStudent.run(student);
-
-				const favorTitleData = favorTitles[student];
-				const variants = Object.keys(favorTitles[student]);
+				const favorTitleData = favorTitles[student.title];
+				const variants = Object.keys(favorTitles[student.title]);
 				for (const variant of variants) {
 					const path = favorTitleData[variant];
 					const title = `${student.title} favor title (${variant})`;
@@ -88,32 +95,24 @@ const insertScrapedData = (students, favorTitles) => {
 		dbTransaction();
 	}
 	catch (error) {
-		console.log(`Insertion failed: ${error.message}`);
+		console.log(`Insertion failed: ${error}`);
 		return error;
 	}
 };
 
-const registerNewUser = (discordID, name) => {
-	try {
-		const userStmt = db.prepare('INSERT INTO users (id, name) VALUES (:id, :name)');
-		const walletStmt = db.prepare('INSERT INTO wallets (user_id, pyroxenes, credits, energy ) VALUES (:id, 0, 0, 0)');
-		const dbTransaction = db.transaction(() => {
-			userStmt.run({ id: discordID, name: name });
-			walletStmt.run({ id: discordID });
-		});
-		dbTransaction();
-		return null;
-	}
-	catch (error) {
-		console.log(`Registration failed: ${error.message}`);
-		return error;
-	}
+const initializeDatabase = () => {
+	createDB();
+
+	// Insert students and favor titles
+	const releasedStudents = require('../utility/releasedStudents.json');
+	const unreleasedStudents = require('../utility/unreleasedStudents.json');
+	const students = { ...releasedStudents, ...unreleasedStudents };
+	const favorTitles = require('../utility/favorTitles.json');
+	insertScrapedData(students, favorTitles);
 };
 
 module.exports = {
-	createDB,
-	insertScrapedData,
-	registerNewUser,
+	initializeDatabase,
 };
 
-createDB();
+initializeDatabase();

@@ -52,6 +52,7 @@ const fetchStudentInfo = async () => {
 				const [ school, club ] = page('table tr:nth-child(4) td:first-child').attr('title').split(', ');
 				student.school = school;
 				student.club = club;
+				student.title = title;
 				const dataRows = page('tr:has(th.character-profile.character-header) ~ tr');
 				dataRows.each((i, el) => {
 					const row = page(el);
@@ -59,7 +60,9 @@ const fetchStudentInfo = async () => {
 					const field = row.find('td').text().trim();
 					student[header] = field;
 				});
-				console.log(`fetched - ${title} info`);
+				const rarityElement = page('div.character-rarity');
+				student.rarity = rarityElement.attr('data-value');
+				console.log(`Fetched - ${title} info`);
 
 				// Find name of the icon png
 				const iconFileName = `Portrait_${title.replaceAll(' ', '_')}.png`;
@@ -78,7 +81,7 @@ const fetchStudentInfo = async () => {
 						},
 					});
 					fs.writeFileSync(path, iconBuffer.data);
-					console.log(`fetched - ${title} portrait`);
+					console.log(`Fetched - ${title} portrait`);
 				}
 
 				student['icon'] = path;
@@ -206,7 +209,7 @@ const fetchFavorTitleIcons = async () => {
 		fs.writeFileSync(path, studentImgBuffer.data);
 		studentImg.path = path;
 		favorTitleStudentImages[student] = studentImg;
-		console.log(`fetched - ${imageName}`);
+		console.log(`Fetched - ${imageName}`);
 	}
 	fs.writeFileSync('./images/emblems/favorTitleStudentImages.json', JSON.stringify(favorTitleStudentImages));
 	console.log('Fetched favor title student icons');
