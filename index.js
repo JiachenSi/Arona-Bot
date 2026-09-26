@@ -13,69 +13,7 @@ const client = new Client({ intents: [
 	GatewayIntentBits.GuildMembers,
 ] });
 
-client.once(Events.ClientReady, async (readyClient) => {
-	console.log(`Ready! Logged in as ${readyClient.user.tag}`);
-
-	// Check if data file already exists, otherwise create it
-	if (!fs.existsSync('./data.json')) {
-		console.log('data.json could not be found, creating new data file');
-		initiateStorage(readyClient);
-	}
-	else {
-		loadUserData();
-	}
-});
-
-// Slash commands
-client.on(Events.InteractionCreate, async (interaction) => {
-	// Exit if non-slash command encountered
-	if (!interaction.isChatInputCommand()) return;
-	const command = interaction.client.commands.get(interaction.commandName);
-
-	if (!command) {
-		console.error(`No command matching ${interaction.commandName} was found`);
-		return;
-	}
-
-	try {
-		await command.execute(interaction);
-	}
-	catch (error) {
-		console.error(error);
-		if (interaction.replied || interaction.deferred) {
-			await interaction.followUp({
-				content: 'There was an error while executing this command!',
-				flags: MessageFlags.Ephemeral,
-			});
-		}
-		else {
-			await interaction.reply({
-				content: 'There was an error while executing this command!',
-				flags: MessageFlags.Ephemeral,
-			});
-		}
-	}
-});
-
-client.on(Events.MessageCreate, async (message) => {
-	// Exit if message is from the bot
-	if (message.author.bot) return;
-	const id = message.member.id;
-	const member = getMember(id);
-	const exp = Math.floor(Math.random() * 6) + 5;
-	member.currentExp += exp;
-
-	// Check if member levels up
-	const expRequired = 10 + (member.level - 1) * 5;
-	if (member.currentExp >= expRequired) {
-		member.level++;
-		member.currentExp -= expRequired;
-	}
-	updateMember(id, member);
-});
-
 client.commands = new Collection();
-
 const folderPath = path.join(__dirname, 'commands');
 const commandsFolders = fs.readdirSync(folderPath);
 
@@ -91,6 +29,19 @@ for (const folder of commandsFolders) {
 		else {
 			console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property`);
 		}
+	}
+}
+
+const eventsPath = path.join(__dirname, 'events');
+const eventFiles = fs.readdirSync(eventsPath).filter((file) => file.endsWith('.js'));
+for (const file of eventFiles) {
+	const filePath = path.join(eventsPath, file);
+	const event = require(filePath);
+	if (event.once) {
+		client.once(event.name, (...args) => event.execute(...args));
+	}
+	else {
+		client.on(event.name, (...args) => event.execute(...args));
 	}
 }
 
