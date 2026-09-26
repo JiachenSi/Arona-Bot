@@ -22,13 +22,13 @@ const getUserPullCount = (discordId) => {
 		const sql = `
 			SELECT id, pulls
 			FROM users
-			WHERE id = :id
+			WHERE id == :id
 		`;
 		const stmt = db.prepare(sql);
-		return stmt.run({ id: discordId });
+		return stmt.all({ id: discordId });
 	}
 	catch (error) {
-		console.log(`Registration failed: ${error.message}`);
+		console.log(`Failed to retrieve user pull info: ${error.message}`);
 		return error;
 	}
 };
@@ -39,7 +39,7 @@ const addNewStudents = (discordId, pulls, students) => {
 			const updatePullsSql = `
 			UPDATE users
 			SET pulls = :pulls
-			WHERE id = :id
+			WHERE id == :id
 			`;
 			db.prepare(updatePullsSql).run({ pulls: pulls, id: discordId });
 			for (const student of students) {
@@ -49,13 +49,14 @@ const addNewStudents = (discordId, pulls, students) => {
 					ON CONFLICT (user_id, student_id) DO UPDATE SET
 						copies = copies + 1
 				`;
-				db.prepare(addStudentsSql).run({ id: discordId, student: student[0] });
+				continue;
+				db.prepare(addStudentsSql).run({ id: discordId, student: student });
 			}
 		});
 		dbTransaction();
 	}
 	catch (error) {
-		console.log(`Registration failed: ${error.message}`);
+		console.log(`Failed to add student info: ${error.message}`);
 		return error;
 	}
 };

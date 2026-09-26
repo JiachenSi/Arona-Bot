@@ -2,12 +2,14 @@
 	{
 		"id": 1,
 		"name": "Debut Banner",
+		"type": "regular",
 		"start_date": "2024-01-15",
 		"end_date": "2027-01-29"
 	},
 	{
 		"id": 2,
-		"name": "Bullshit Banner",
+		"name": "Super Special Banner",
+		"type": "limited",
 		"start_date": "2024-01-15",
 		"end_date": "2028-01-29"
 	}

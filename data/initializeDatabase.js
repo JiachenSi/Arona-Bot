@@ -1,9 +1,10 @@
 const { db } = require('./dbConnection.js');
 const { favorTitleSkipList } = require('../utility/favorTitleSkipList.js');
-const banner = require('../data/seed/bannerSeed.json');
-const bannerStudent = require('../data/seed/bannerStudent.json');
+const banners = require('../data/seed/bannerSeed.json');
+const bannerStudents = require('../data/seed/bannerStudent.json');
 const users = require('../data/seed/userSeed.json');
-const userStudent = require('../data/seed/userStudentSeed.json');
+const userStudents = require('../data/seed/userStudentSeed.json');
+const wallets = require('../data/seed/walletSeed.json');
 
 const createDB = () => {
 	// Schema Setup
@@ -81,7 +82,48 @@ const createDB = () => {
 };
 
 const insertTestData = () => {
+	const dbTransaction = db.transaction(() => {
+		for (const banner of banners) {
+			const bannerInsertSql = `
+                INSERT INTO banners (id, name, type, start_date, end_date)
+                VALUES (@id, @name, @type, @start_date, @end_date)
+            `;
+			db.prepare(bannerInsertSql).run(banner);
+		}
 
+		for (const bannerStudent of bannerStudents) {
+			const bannerStudentInsertSql = `
+                INSERT INTO banner_student (banner_id, student_id)
+                VALUES (@banner_id, @student_id)
+            `;
+			db.prepare(bannerStudentInsertSql).run(bannerStudent);
+		}
+
+		for (const user of users) {
+			const userInsertSql = `
+                INSERT INTO users (id, name, pulls)
+                VALUES (@id, @name, @pulls)
+            `;
+			db.prepare(userInsertSql).run(user);
+		}
+
+		for (const userStudent of userStudents) {
+			const userStudentsInsertSql = `
+                INSERT INTO user_student(user_id, student_id, copies)
+                VALUES (@user_id, @student_id, @copies)
+            `;
+			db.prepare(userStudentsInsertSql).run(userStudent);
+		}
+
+		for (const wallet of wallets) {
+			const walletsInsertSql = `
+                INSERT INTO wallets (id, user_id, pyroxenes, credits, energy)
+                VALUES (@id, @user_id, @pyroxenes, @credits, @energy)
+            `;
+			db.prepare(walletsInsertSql).run(wallet);
+		}
+	});
+	dbTransaction();
 };
 
 // Only used when database is empty, AKA Fresh install
@@ -150,6 +192,7 @@ const initializeDatabase = () => {
 	const students = { ...releasedStudents, ...unreleasedStudents };
 	const favorTitles = require('../utility/favorTitles.json');
 	insertScrapedData(students, favorTitles);
+	insertTestData();
 };
 
 module.exports = {

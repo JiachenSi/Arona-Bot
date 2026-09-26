@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
+const { pullTen, pullOne } = require('../../gacha/gacha');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -14,8 +15,16 @@ module.exports = {
 					{ name: '10', value: 10 }),
 		),
 	async execute(interaction) {
+		const bannerId = 1;
+		const discordId = interaction.user.id;
 		const amount = interaction.options.getInteger('amount');
-		console.log(amount);
-		await interaction.reply('run /pull command');
+		let result;
+		if (amount == 10) {
+			result = pullTen(discordId, bannerId);
+		}
+		else {
+			result = pullOne(discordId, bannerId);
+		}
+		await interaction.reply(JSON.stringify(result));
 	},
 };

@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { registerNewUser } = require('../../data/registerUser');
+const { registerNewUser } = require('../../data/user');
 
 module.exports = {
 	data: new SlashCommandBuilder().setName('register').setDescription('Registers a user so they can use Arona-Bot'),
