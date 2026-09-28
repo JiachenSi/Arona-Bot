@@ -1,8 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const { Client, Collection, Events, GatewayIntentBits, MessageFlags } = require('discord.js');
+const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
-const { initiateStorage, loadUserData, getMember, updateMember } = require('./data_layer.js');
 
 // Create bot client instance
 // Specifies what kind of events the bot subscribes to

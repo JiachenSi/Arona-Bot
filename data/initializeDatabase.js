@@ -32,7 +32,7 @@ const createDB = () => {
         voice VARCHAR(30) NOT NULL,
         release_date_jp DATE NOT NULL,
         release_date_gl DATE,
-        icon VARCHAR(150) NOT NULL
+        emoji VARCHAR(150) NOT NULL
     );
 
     CREATE TABLE IF NOT EXISTS favor_titles  (
@@ -130,7 +130,8 @@ const insertTestData = () => {
 const insertScrapedData = (students, favorTitles) => {
 	try {
 		const dbTransaction = db.transaction(() => {
-			for (const student of Object.values(students)) {
+			for (const student of students) {
+
 				if (favorTitleSkipList.includes(student.title.replaceAll(' ', '_'))) {
 					continue;
 				}
@@ -143,10 +144,10 @@ const insertScrapedData = (students, favorTitles) => {
 				const insertStudent = db.prepare(`
                     INSERT INTO students (
                         title, is_regular, school, club, fullname, age, birthday, height, hobbies, rarity,
-                        designer, illustrator, voice, release_date_jp, release_date_gl, icon
+                        designer, illustrator, voice, release_date_jp, release_date_gl, emoji
                     ) VALUES (
                         @title, @is_regular, @school, @club, @fullname, @age, @birthday, @height, @hobbies, @rarity,
-                        @designer, @illustrator, @voice, @release_date_jp, @release_date_gl, @icon
+                        @designer, @illustrator, @voice, @release_date_jp, @release_date_gl, @emoji
                 )`);
 				const info = insertStudent.run(student);
 				const favorTitleData = favorTitles[student.title];
@@ -187,9 +188,7 @@ const initializeDatabase = () => {
 	createDB();
 
 	// Insert students and favor titles
-	const releasedStudents = require('../utility/releasedStudents.json');
-	const unreleasedStudents = require('../utility/unreleasedStudents.json');
-	const students = { ...releasedStudents, ...unreleasedStudents };
+	const students = require('../utility/students.json');
 	const favorTitles = require('../utility/favorTitles.json');
 	insertScrapedData(students, favorTitles);
 	insertTestData();

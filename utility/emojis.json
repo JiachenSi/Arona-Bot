@@ -1,0 +1,842 @@
+{
+    "one_star": {
+        "text": "<:one_star:1554051747280982036>"
+    },
+    "two_star": {
+        "text": "<:two_star:1554051748786733147>"
+    },
+    "three_star": {
+        "text": "<:three_star:1554051751047471114>"
+    },
+    "Airi": {
+        "text": "<:Airi:1554051753891332109>"
+    },
+    "Airi_Band": {
+        "text": "<:Airi_Band:1554051756634284122>"
+    },
+    "Akane": {
+        "text": "<:Akane:1554051758852931615>"
+    },
+    "Akane_Bunny_Girl": {
+        "text": "<:Akane_Bunny_Girl:1554051761126379570>"
+    },
+    "Akane_School_Uniform": {
+        "text": "<:Akane_School_Uniform:1554051762581798963>"
+    },
+    "Akari": {
+        "text": "<:Akari:1554051765119352922>"
+    },
+    "Akari_New_Year": {
+        "text": "<:Akari_New_Year:1554051767233286154>"
+    },
+    "Ako": {
+        "text": "<:Ako:1554051769066324019>"
+    },
+    "Ako_Dress": {
+        "text": "<:Ako_Dress:1554051771125465109>"
+    },
+    "Aoba": {
+        "text": "<:Aoba:1554051773331939359>"
+    },
+    "Arisu": {
+        "text": "<:Arisu:1554051775009529896>"
+    },
+    "Arisu_Battle": {
+        "text": "<:Arisu_Battle:1554051777295548477>"
+    },
+    "Arisu_Maid": {
+        "text": "<:Arisu_Maid:1554051779350757436>"
+    },
+    "Aru": {
+        "text": "<:Aru:1554051781439520862>"
+    },
+    "Aru_Dress": {
+        "text": "<:Aru_Dress:1554051784035799050>"
+    },
+    "Aru_New_Year": {
+        "text": "<:Aru_New_Year:1554051786053263370>"
+    },
+    "Asuna": {
+        "text": "<:Asuna:1554051788599205948>"
+    },
+    "Asuna_Bunny_Girl": {
+        "text": "<:Asuna_Bunny_Girl:1554051791107399690>"
+    },
+    "Asuna_School_Uniform": {
+        "text": "<:Asuna_School_Uniform:1554051793728577566>"
+    },
+    "Atsuko": {
+        "text": "<:Atsuko:1554051795398033458>"
+    },
+    "Atsuko_Swimsuit": {
+        "text": "<:Atsuko_Swimsuit:1554051797696643082>"
+    },
+    "Ayane": {
+        "text": "<:Ayane:1554051799944536084>"
+    },
+    "Ayane_Swimsuit": {
+        "text": "<:Ayane_Swimsuit:1554051801878110278>"
+    },
+    "Azusa": {
+        "text": "<:Azusa:1554051804067790878>"
+    },
+    "Azusa_Swimsuit": {
+        "text": "<:Azusa_Swimsuit:1554051805816823898>"
+    },
+    "Cherino": {
+        "text": "<:Cherino:1554051807817367594>"
+    },
+    "Cherino_Hot_Spring": {
+        "text": "<:Cherino_Hot_Spring:1554051810279297044>"
+    },
+    "Chiaki": {
+        "text": "<:Chiaki:1554051812582096976>"
+    },
+    "Chihiro": {
+        "text": "<:Chihiro:1554051814205169766>"
+    },
+    "Chinatsu": {
+        "text": "<:Chinatsu:1554051817128726588>"
+    },
+    "Chinatsu_Hot_Spring": {
+        "text": "<:Chinatsu_Hot_Spring:1554051819263623228>"
+    },
+    "Chise": {
+        "text": "<:Chise:1554051821323026566>"
+    },
+    "Chise_Swimsuit": {
+        "text": "<:Chise_Swimsuit:1554051823235637358>"
+    },
+    "Eimi": {
+        "text": "<:Eimi:1554051824565362729>"
+    },
+    "Eimi_Battle": {
+        "text": "<:Eimi_Battle:1554051827576733726>"
+    },
+    "Eimi_Swimsuit": {
+        "text": "<:Eimi_Swimsuit:1554051829401124894>"
+    },
+    "Eri": {
+        "text": "<:Eri:1554051830709755975>"
+    },
+    "Erika": {
+        "text": "<:Erika:1554051832945315880>"
+    },
+    "Fubuki": {
+        "text": "<:Fubuki:1554051835130544159>"
+    },
+    "Fubuki_Swimsuit": {
+        "text": "<:Fubuki_Swimsuit:1554051839979159622>"
+    },
+    "Fuuka": {
+        "text": "<:Fuuka:1554051842630221885>"
+    },
+    "Fuuka_New_Year": {
+        "text": "<:Fuuka_New_Year:1554051844454482042>"
+    },
+    "Fuyu": {
+        "text": "<:Fuyu:1554051846606430250>"
+    },
+    "Hanae": {
+        "text": "<:Hanae:1554051848242208868>"
+    },
+    "Hanae_Christmas": {
+        "text": "<:Hanae_Christmas:1554051850611990538>"
+    },
+    "Hanako": {
+        "text": "<:Hanako:1554051852725911644>"
+    },
+    "Hanako_Swimsuit": {
+        "text": "<:Hanako_Swimsuit:1554051855229652994>"
+    },
+    "Hare": {
+        "text": "<:Hare:1554051857532321803>"
+    },
+    "Hare_Camping": {
+        "text": "<:Hare_Camping:1554051859839459358>"
+    },
+    "Haruka": {
+        "text": "<:Haruka:1554051862192193656>"
+    },
+    "Haruka_Dress": {
+        "text": "<:Haruka_Dress:1554051864490672139>"
+    },
+    "Haruka_New_Year": {
+        "text": "<:Haruka_New_Year:1554051866734624808>"
+    },
+    "Haruna": {
+        "text": "<:Haruna:1554051868794298460>"
+    },
+    "Haruna_New_Year": {
+        "text": "<:Haruna_New_Year:1554051870945976380>"
+    },
+    "Haruna_Sportswear": {
+        "text": "<:Haruna_Sportswear:1554051876821925988>"
+    },
+    "Hasumi": {
+        "text": "<:Hasumi:1554051878503850047>"
+    },
+    "Hasumi_Sportswear": {
+        "text": "<:Hasumi_Sportswear:1554051880093483009>"
+    },
+    "Hasumi_Swimsuit": {
+        "text": "<:Hasumi_Swimsuit:1554051882228383756>"
+    },
+    "Hatsune_Miku": {
+        "text": "<:Hatsune_Miku:1554051884606685265>"
+    },
+    "Hibiki": {
+        "text": "<:Hibiki:1554051886175359048>"
+    },
+    "Hibiki_Cheerleader": {
+        "text": "<:Hibiki_Cheerleader:1554051888360722442>"
+    },
+    "Hifumi": {
+        "text": "<:Hifumi:1554051890218803210>"
+    },
+    "Hifumi_Swimsuit": {
+        "text": "<:Hifumi_Swimsuit:1554051892869333124>"
+    },
+    "Hikari": {
+        "text": "<:Hikari:1554051895981772830>"
+    },
+    "Himari": {
+        "text": "<:Himari:1554051898368200715>"
+    },
+    "Himari_Battle": {
+        "text": "<:Himari_Battle:1554051900528136202>"
+    },
+    "Hina": {
+        "text": "<:Hina:1554051902696849460>"
+    },
+    "Hina_Dress": {
+        "text": "<:Hina_Dress:1554051904995074138>"
+    },
+    "Hina_Swimsuit": {
+        "text": "<:Hina_Swimsuit:1554051907138359437>"
+    },
+    "Hinata": {
+        "text": "<:Hinata:1554051909063671808>"
+    },
+    "Hinata_Swimsuit": {
+        "text": "<:Hinata_Swimsuit:1554051910787539004>"
+    },
+    "Hiyori": {
+        "text": "<:Hiyori:1554051912586891285>"
+    },
+    "Hiyori_Swimsuit": {
+        "text": "<:Hiyori_Swimsuit:1554051914675519528>"
+    },
+    "Hoshino": {
+        "text": "<:Hoshino:1554051920749133884>"
+    },
+    "Hoshino_Battle": {
+        "text": "<:Hoshino_Battle:1554051923248816188>"
+    },
+    "Hoshino_Swimsuit": {
+        "text": "<:Hoshino_Swimsuit:1554051925803012126>"
+    },
+    "Ibuki": {
+        "text": "<:Ibuki:1554051927711420526>"
+    },
+    "Ichika": {
+        "text": "<:Ichika:1554051929242607667>"
+    },
+    "Ichika_Swimsuit": {
+        "text": "<:Ichika_Swimsuit:1554051933902348318>"
+    },
+    "Iori": {
+        "text": "<:Iori:1554051936334905425>"
+    },
+    "Iori_Swimsuit": {
+        "text": "<:Iori_Swimsuit:1554051938159427646>"
+    },
+    "Iroha": {
+        "text": "<:Iroha:1554051941225730068>"
+    },
+    "Izumi": {
+        "text": "<:Izumi:1554051943603634228>"
+    },
+    "Izumi_New_Year": {
+        "text": "<:Izumi_New_Year:1554051946367815700>"
+    },
+    "Izumi_Swimsuit": {
+        "text": "<:Izumi_Swimsuit:1554051948205056061>"
+    },
+    "Izuna": {
+        "text": "<:Izuna:1554051950620966912>"
+    },
+    "Izuna_Swimsuit": {
+        "text": "<:Izuna_Swimsuit:1554051952810401873>"
+    },
+    "Junko": {
+        "text": "<:Junko:1554051954865606726>"
+    },
+    "Junko_New_Year": {
+        "text": "<:Junko_New_Year:1554051956962627637>"
+    },
+    "Juri": {
+        "text": "<:Juri:1554051959881736254>"
+    },
+    "Juri_PartTimer": {
+        "text": "<:Juri_PartTimer:1554051962092392572>"
+    },
+    "Kaede": {
+        "text": "<:Kaede:1554051964147605545>"
+    },
+    "Kaho": {
+        "text": "<:Kaho:1554051965825065060>"
+    },
+    "Kanna": {
+        "text": "<:Kanna:1554051967570026528>"
+    },
+    "Kanna_Swimsuit": {
+        "text": "<:Kanna_Swimsuit:1554051969285496833>"
+    },
+    "Kanoe": {
+        "text": "<:Kanoe:1554051971709927437>"
+    },
+    "Karin": {
+        "text": "<:Karin:1554051974134104144>"
+    },
+    "Karin_Bunny_Girl": {
+        "text": "<:Karin_Bunny_Girl:1554051975828738109>"
+    },
+    "Karin_School_Uniform": {
+        "text": "<:Karin_School_Uniform:1554051977489547267>"
+    },
+    "Kasumi": {
+        "text": "<:Kasumi:1554051979238576225>"
+    },
+    "Kayoko": {
+        "text": "<:Kayoko:1554051982006820894>"
+    },
+    "Kayoko_Dress": {
+        "text": "<:Kayoko_Dress:1554051984523272213>"
+    },
+    "Kayoko_New_Year": {
+        "text": "<:Kayoko_New_Year:1554051986402443315>"
+    },
+    "Kazusa": {
+        "text": "<:Kazusa:1554051989598502952>"
+    },
+    "Kazusa_Band": {
+        "text": "<:Kazusa_Band:1554051991225897023>"
+    },
+    "Kei": {
+        "text": "<:Kei:1554051993406799942>"
+    },
+    "Kikyou": {
+        "text": "<:Kikyou:1554051995298562098>"
+    },
+    "Kikyou_Swimsuit": {
+        "text": "<:Kikyou_Swimsuit:1554051997294919752>"
+    },
+    "Kirara": {
+        "text": "<:Kirara:1554052000113627146>"
+    },
+    "Kirino": {
+        "text": "<:Kirino:1554052002521288825>"
+    },
+    "Kirino_Swimsuit": {
+        "text": "<:Kirino_Swimsuit:1554052004538486836>"
+    },
+    "Kisaki": {
+        "text": "<:Kisaki:1554052006275190834>"
+    },
+    "Koharu": {
+        "text": "<:Koharu:1554052008351236127>"
+    },
+    "Koharu_Swimsuit": {
+        "text": "<:Koharu_Swimsuit:1554052010687332384>"
+    },
+    "Kokona": {
+        "text": "<:Kokona:1554052012390350900>"
+    },
+    "Konoka": {
+        "text": "<:Konoka:1554052014579785812>"
+    },
+    "Kotama": {
+        "text": "<:Kotama:1554052017121525852>"
+    },
+    "Kotama_Camping": {
+        "text": "<:Kotama_Camping:1554052019377938472>"
+    },
+    "Kotori": {
+        "text": "<:Kotori:1554052021600915628>"
+    },
+    "Kotori_Cheerleader": {
+        "text": "<:Kotori_Cheerleader:1554052023241019506>"
+    },
+    "Koyuki": {
+        "text": "<:Koyuki:1554052025829031997>"
+    },
+    "Koyuki_Pajama": {
+        "text": "<:Koyuki_Pajama:1554052030287315045>"
+    },
+    "Kurumi": {
+        "text": "<:Kurumi:1554052032372019200>"
+    },
+    "Maki": {
+        "text": "<:Maki:1554052035337388042>"
+    },
+    "Maki_Camping": {
+        "text": "<:Maki_Camping:1554052037241471067>"
+    },
+    "Makoto": {
+        "text": "<:Makoto:1554052039590412319>"
+    },
+    "Mari": {
+        "text": "<:Mari:1554052042291413002>"
+    },
+    "Mari_Idol": {
+        "text": "<:Mari_Idol:1554052045529419906>"
+    },
+    "Mari_Sportswear": {
+        "text": "<:Mari_Sportswear:1554052048138539048>"
+    },
+    "Marina": {
+        "text": "<:Marina:1554052050260852766>"
+    },
+    "Marina_Qipao": {
+        "text": "<:Marina_Qipao:1554052052236107836>"
+    },
+    "Mashiro": {
+        "text": "<:Mashiro:1554052053800849518>"
+    },
+    "Mashiro_Swimsuit": {
+        "text": "<:Mashiro_Swimsuit:1554052056061583420>"
+    },
+    "Megu": {
+        "text": "<:Megu:1554052059307839500>"
+    },
+    "Meru": {
+        "text": "<:Meru:1554052061396467732>"
+    },
+    "Michiru": {
+        "text": "<:Michiru:1554052063502274580>"
+    },
+    "Michiru_Dress": {
+        "text": "<:Michiru_Dress:1554052065041326196>"
+    },
+    "Midori": {
+        "text": "<:Midori:1554052068342366268>"
+    },
+    "Midori_Maid": {
+        "text": "<:Midori_Maid:1554052071358074922>"
+    },
+    "Mika": {
+        "text": "<:Mika:1554052074558197860>"
+    },
+    "Mika_Swimsuit": {
+        "text": "<:Mika_Swimsuit:1554052076336578570>"
+    },
+    "Mimori": {
+        "text": "<:Mimori:1554052078517882921>"
+    },
+    "Mimori_Swimsuit": {
+        "text": "<:Mimori_Swimsuit:1554052080434683996>"
+    },
+    "Mina": {
+        "text": "<:Mina:1554052083093610517>"
+    },
+    "Mine": {
+        "text": "<:Mine:1554052086096986193>"
+    },
+    "Mine_Idol": {
+        "text": "<:Mine_Idol:1554052088634277948>"
+    },
+    "Minori": {
+        "text": "<:Minori:1554052090962124821>"
+    },
+    "Misaka_Mikoto": {
+        "text": "<:Misaka_Mikoto:1554052093436895283>"
+    },
+    "Misaki": {
+        "text": "<:Misaki:1554052095605215334>"
+    },
+    "Misaki_Swimsuit": {
+        "text": "<:Misaki_Swimsuit:1554052098008682558>"
+    },
+    "Miyako": {
+        "text": "<:Miyako:1554052100298907658>"
+    },
+    "Miyako_Swimsuit": {
+        "text": "<:Miyako_Swimsuit:1554052102202982413>"
+    },
+    "Miyo": {
+        "text": "<:Miyo:1554052106330177537>"
+    },
+    "Miyu": {
+        "text": "<:Miyu:1554052109731627008>"
+    },
+    "Miyu_Swimsuit": {
+        "text": "<:Miyu_Swimsuit:1554052111699025921>"
+    },
+    "Moe": {
+        "text": "<:Moe:1554052113716224081>"
+    },
+    "Moe_Swimsuit": {
+        "text": "<:Moe_Swimsuit:1554052115440082974>"
+    },
+    "Momiji": {
+        "text": "<:Momiji:1554052117042430024>"
+    },
+    "Momoi": {
+        "text": "<:Momoi:1554052120246886440>"
+    },
+    "Momoi_Maid": {
+        "text": "<:Momoi_Maid:1554052122390298697>"
+    },
+    "Mutsuki": {
+        "text": "<:Mutsuki:1554052131130970164>"
+    },
+    "Mutsuki_Dress": {
+        "text": "<:Mutsuki_Dress:1554052133228253275>"
+    },
+    "Mutsuki_New_Year": {
+        "text": "<:Mutsuki_New_Year:1554052135610482754>"
+    },
+    "Nagisa": {
+        "text": "<:Nagisa:1554052138022469663>"
+    },
+    "Nagisa_Swimsuit": {
+        "text": "<:Nagisa_Swimsuit:1554052139553259642>"
+    },
+    "Nagusa": {
+        "text": "<:Nagusa:1554052142082560121>"
+    },
+    "Natsu": {
+        "text": "<:Natsu:1554052144183775345>"
+    },
+    "Natsu_Band": {
+        "text": "<:Natsu_Band:1554052145752318002>"
+    },
+    "Neru": {
+        "text": "<:Neru:1554052148063506513>"
+    },
+    "Neru_Bunny_Girl": {
+        "text": "<:Neru_Bunny_Girl:1554052150496198686>"
+    },
+    "Neru_School_Uniform": {
+        "text": "<:Neru_School_Uniform:1554052156057981008>"
+    },
+    "Niko": {
+        "text": "<:Niko:1554052157643169853>"
+    },
+    "Niya": {
+        "text": "<:Niya:1554052160528973855>"
+    },
+    "Noa": {
+        "text": "<:Noa:1554052162894692443>"
+    },
+    "Noa_Pajama": {
+        "text": "<:Noa_Pajama:1554052167365828648>"
+    },
+    "Nodoka": {
+        "text": "<:Nodoka:1554052171614654475>"
+    },
+    "Nodoka_Hot_Spring": {
+        "text": "<:Nodoka_Hot_Spring:1554052174701531216>"
+    },
+    "Nonomi": {
+        "text": "<:Nonomi:1554052177121517589>"
+    },
+    "Nonomi_Swimsuit": {
+        "text": "<:Nonomi_Swimsuit:1554052179193495593>"
+    },
+    "Nozomi": {
+        "text": "<:Nozomi:1554052181080940576>"
+    },
+    "Otogi": {
+        "text": "<:Otogi:1554052183043874858>"
+    },
+    "Pina": {
+        "text": "<:Pina:1554052185036165178>"
+    },
+    "Pina_Guide": {
+        "text": "<:Pina_Guide:1554052188224094318>"
+    },
+    "Rabu": {
+        "text": "<:Rabu:1554052190463729744>"
+    },
+    "Rei": {
+        "text": "<:Rei:1554052192833634355>"
+    },
+    "Reijo": {
+        "text": "<:Reijo:1554052195425722408>"
+    },
+    "Reisa": {
+        "text": "<:Reisa:1554052197619081287>"
+    },
+    "Reisa_Magical": {
+        "text": "<:Reisa_Magical:1554052199921881138>"
+    },
+    "Rena": {
+        "text": "<:Rena:1554052201490686062>"
+    },
+    "Renge": {
+        "text": "<:Renge:1554052203000496191>"
+    },
+    "Renge_Swimsuit": {
+        "text": "<:Renge_Swimsuit:1554052205575798805>"
+    },
+    "Rio": {
+        "text": "<:Rio:1554052207345803274>"
+    },
+    "Rio_Battle": {
+        "text": "<:Rio_Battle:1554052209057206322>"
+    },
+    "Ritsu": {
+        "text": "<:Ritsu:1554052210692718685>"
+    },
+    "Rumi": {
+        "text": "<:Rumi:1554052212685152327>"
+    },
+    "Saki": {
+        "text": "<:Saki:1554052214480306206>"
+    },
+    "Saki_Swimsuit": {
+        "text": "<:Saki_Swimsuit:1554052216032067637>"
+    },
+    "Sakurako": {
+        "text": "<:Sakurako:1554052218187948044>"
+    },
+    "Sakurako_Idol": {
+        "text": "<:Sakurako_Idol:1554052221199589466>"
+    },
+    "Saori": {
+        "text": "<:Saori:1554052223586013230>"
+    },
+    "Saori_Dress": {
+        "text": "<:Saori_Dress:1554052225523912734>"
+    },
+    "Saori_Swimsuit": {
+        "text": "<:Saori_Swimsuit:1554052228145217576>"
+    },
+    "Saten_Ruiko": {
+        "text": "<:Saten_Ruiko:1554052230477381664>"
+    },
+    "Satsuki": {
+        "text": "<:Satsuki:1554052232310300723>"
+    },
+    "Saya": {
+        "text": "<:Saya:1554052235036590092>"
+    },
+    "Saya_Casual": {
+        "text": "<:Saya_Casual:1554052237649514511>"
+    },
+    "Seia": {
+        "text": "<:Seia:1554052249628573716>"
+    },
+    "Seia_Swimsuit": {
+        "text": "<:Seia_Swimsuit:1554052251528593419>"
+    },
+    "Sena": {
+        "text": "<:Sena:1554052254775119953>"
+    },
+    "Sena_Casual": {
+        "text": "<:Sena_Casual:1554052261582348329>"
+    },
+    "Serika": {
+        "text": "<:Serika:1554052263704526938>"
+    },
+    "Serika_New_Year": {
+        "text": "<:Serika_New_Year:1554052265692897320>"
+    },
+    "Serika_Swimsuit": {
+        "text": "<:Serika_Swimsuit:1554052268267929611>"
+    },
+    "Serina": {
+        "text": "<:Serina:1554052270407032862>"
+    },
+    "Serina_Christmas": {
+        "text": "<:Serina_Christmas:1554052272512700596>"
+    },
+    "Shigure": {
+        "text": "<:Shigure:1554052274538545262>"
+    },
+    "Shigure_Hot_Spring": {
+        "text": "<:Shigure_Hot_Spring:1554052276438569040>"
+    },
+    "Shimiko": {
+        "text": "<:Shimiko:1554052278866939904>"
+    },
+    "Shiroko": {
+        "text": "<:Shiroko:1554052280653975614>"
+    },
+    "Shiroko_Riding": {
+        "text": "<:Shiroko_Riding:1554052282935414814>"
+    },
+    "Shiroko_Swimsuit": {
+        "text": "<:Shiroko_Swimsuit:1554052285477290055>"
+    },
+    "ShirokoTerror": {
+        "text": "<:ShirokoTerror:1554052289998753852>"
+    },
+    "Shizuko": {
+        "text": "<:Shizuko:1554052292456620082>"
+    },
+    "Shizuko_Swimsuit": {
+        "text": "<:Shizuko_Swimsuit:1554052294461366345>"
+    },
+    "Shokuhou_Misaki": {
+        "text": "<:Shokuhou_Misaki:1554052297007571024>"
+    },
+    "Shun": {
+        "text": "<:Shun:1554052299117039626>"
+    },
+    "Shun_Kid": {
+        "text": "<:Shun_Kid:1554052301700862022>"
+    },
+    "Subaru": {
+        "text": "<:Subaru:1554052304112721940>"
+    },
+    "Sumire": {
+        "text": "<:Sumire:1554052305756618845>"
+    },
+    "Sumire_PartTimer": {
+        "text": "<:Sumire_PartTimer:1554052308139245658>"
+    },
+    "Suzumi": {
+        "text": "<:Suzumi:1554052310659760159>"
+    },
+    "Suzumi_Magical": {
+        "text": "<:Suzumi_Magical:1554052313298247700>"
+    },
+    "Takane": {
+        "text": "<:Takane:1554052315697381406>"
+    },
+    "Toki": {
+        "text": "<:Toki:1554052318725673010>"
+    },
+    "Toki_Battle": {
+        "text": "<:Toki_Battle:1554052320352936078>"
+    },
+    "Toki_Bunny_Girl": {
+        "text": "<:Toki_Bunny_Girl:1554052321917403188>"
+    },
+    "Tomoe": {
+        "text": "<:Tomoe:1554052324312219698>"
+    },
+    "Tomoe_Qipao": {
+        "text": "<:Tomoe_Qipao:1554052326493392896>"
+    },
+    "Tsubaki": {
+        "text": "<:Tsubaki:1554052329022689360>"
+    },
+    "Tsubaki_Guide": {
+        "text": "<:Tsubaki_Guide:1554052332659019876>"
+    },
+    "Tsukuyo": {
+        "text": "<:Tsukuyo:1554052335523860490>"
+    },
+    "Tsukuyo_Dress": {
+        "text": "<:Tsukuyo_Dress:1554052338233118843>"
+    },
+    "Tsurugi": {
+        "text": "<:Tsurugi:1554052341534302252>"
+    },
+    "Tsurugi_Swimsuit": {
+        "text": "<:Tsurugi_Swimsuit:1554052343778115624>"
+    },
+    "Ui": {
+        "text": "<:Ui:1554052346080788521>"
+    },
+    "Ui_Swimsuit": {
+        "text": "<:Ui_Swimsuit:1554052348165357598>"
+    },
+    "Umika": {
+        "text": "<:Umika:1554052350950379520>"
+    },
+    "Utaha": {
+        "text": "<:Utaha:1554052353328418889>"
+    },
+    "Utaha_Cheerleader": {
+        "text": "<:Utaha_Cheerleader:1554052355912372307>"
+    },
+    "Wakamo": {
+        "text": "<:Wakamo:1554052358273503292>"
+    },
+    "Wakamo_Swimsuit": {
+        "text": "<:Wakamo_Swimsuit:1554052360312062002>"
+    },
+    "Yakumo": {
+        "text": "<:Yakumo:1554052363206271016>"
+    },
+    "Yoshimi": {
+        "text": "<:Yoshimi:1554052368184905728>"
+    },
+    "Yoshimi_Band": {
+        "text": "<:Yoshimi_Band:1554052369929736224>"
+    },
+    "Yukari": {
+        "text": "<:Yukari:1554052372924473464>"
+    },
+    "Yukari_Swimsuit": {
+        "text": "<:Yukari_Swimsuit:1554052375017164860>"
+    },
+    "Yuuka": {
+        "text": "<:Yuuka:1554052377529552987>"
+    },
+    "Yuuka_Pajama": {
+        "text": "<:Yuuka_Pajama:1554052379618451507>"
+    },
+    "Yuuka_Sportswear": {
+        "text": "<:Yuuka_Sportswear:1554052381979840572>"
+    },
+    "Yuzu": {
+        "text": "<:Yuzu:1554052383313764396>"
+    },
+    "Yuzu_Battle": {
+        "text": "<:Yuzu_Battle:1554052385595461785>"
+    },
+    "Yuzu_Maid": {
+        "text": "<:Yuzu_Maid:1554052388007190599>"
+    },
+    "Anna": {
+        "text": "<:Anna:1554052390573965365>"
+    },
+    "Chiaki_Swimsuit": {
+        "text": "<:Chiaki_Swimsuit:1554052393165914172>"
+    },
+    "Erina": {
+        "text": "<:Erina:1554052395213000705>"
+    },
+    "Hoshino_Battle_Attacker": {
+        "text": "<:Hoshino_Battle_Attacker:1554052397288914966>"
+    },
+    "Ibuki_Swimsuit": {
+        "text": "<:Ibuki_Swimsuit:1554052399734198333>"
+    },
+    "Iroha_Swimsuit": {
+        "text": "<:Iroha_Swimsuit:1554052401550463026>"
+    },
+    "Kasumi_Swimsuit": {
+        "text": "<:Kasumi_Swimsuit:1554052404457111552>"
+    },
+    "Kisaki_Swimsuit": {
+        "text": "<:Kisaki_Swimsuit:1554052405983846430>"
+    },
+    "Kokoro": {
+        "text": "<:Kokoro:1554052407921614908>"
+    },
+    "Kotone": {
+        "text": "<:Kotone:1554052409817432144>"
+    },
+    "Makoto_Swimsuit": {
+        "text": "<:Makoto_Swimsuit:1554052411423985675>"
+    },
+    "Nagusa_Swimsuit": {
+        "text": "<:Nagusa_Swimsuit:1554052414070460466>"
+    },
+    "Satsuki_Swimsuit": {
+        "text": "<:Satsuki_Swimsuit:1554052416520060998>"
+    },
+    "Shun_Swimsuit": {
+        "text": "<:Shun_Swimsuit:1554052418591916102>"
+    },
+    "Shun_Swimsuit_Kid": {
+        "text": "<:Shun_Swimsuit_Kid:1554052420726689792>"
+    }
+}

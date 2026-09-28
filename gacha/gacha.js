@@ -53,7 +53,7 @@ const chooseSpecial = (bannerId) => {
 	else {
 		threeStarRate = rates['any-3-star'];
 	}
-	const twoStarRate = rates['any-2-star'];
+	const twoStarRate = 1 - rates['any-3-star'];
 	const roll = Math.random();
 
 	if (roll < threeStarRate) {
@@ -81,6 +81,8 @@ const chooseTwoStar = (roll, twoStarRate, threeStarRate) => {
 	const divider = twoStarRate / twoStars.length;
 	const remainder = roll - threeStarRate;
 	const quotient = Math.floor(remainder / divider);
+	console.log(roll);
+	console.log(quotient);
 	pullData.id = Number(twoStars[quotient].id);
 	pullData.title = twoStars[quotient].title;
 	return pullData;
@@ -111,8 +113,8 @@ const pullTen = (discordId, bannerId) => {
 	let pulls = Number(getUserPullCount(discordId)[0].pulls);
 	const pullData = [];
 	for (let i = 0; i < 10; i++) {
-		pullData[i] = pull(bannerId);
 		pulls++;
+		pullData[i] = pull(pulls, bannerId);
 	}
 	const students = pullData.map(elem => elem.id);
 	addNewStudents(discordId, pulls, students);
@@ -121,8 +123,8 @@ const pullTen = (discordId, bannerId) => {
 
 const pullOne = (discordId, bannerId) => {
 	let pulls = Number(getUserPullCount(discordId)[0].pulls);
-	const pullData = [ pull(bannerId) ];
 	pulls++;
+	const pullData = [ pull(pulls, bannerId) ];
 	addNewStudents(discordId, pulls, pullData);
 	return pullData;
 };

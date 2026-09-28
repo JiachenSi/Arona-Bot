@@ -69,7 +69,7 @@ const fetchStudentInfo = async () => {
 
 				// Find name of the icon png
 				const iconFileName = `Portrait_${title.replaceAll(' ', '_')}.png`;
-				const path = `./images/${iconFileName}`;
+				const path = `./images/portraits/${iconFileName}`;
 				if (!fs.existsSync(path)) {
 				// Fetch url
 					const iconURLResponse = await axios.get(`https://bluearchive.wiki/w/api.php?action=query&format=json&prop=imageinfo&titles=File:${iconFileName}&iiprop=url`);
@@ -87,7 +87,7 @@ const fetchStudentInfo = async () => {
 					console.log(`Fetched - ${title} portrait`);
 				}
 
-				student['icon'] = path;
+				student.path = path;
 				if (student['release date gl'] !== undefined) {
 					releasedStudents[title] = student;
 				}
@@ -245,5 +245,4 @@ const fetch = async () => {
 
 };
 
-// fetch();
-fetchStudentInfo();
+module.exports = { fetch };

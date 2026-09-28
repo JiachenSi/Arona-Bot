@@ -37,8 +37,20 @@ const get3Stars = () => {
 	return students;
 };
 
+const getStudentEmojis = (studentIds) => {
+	const placeholders = studentIds.map(() => '?').join(',');
+	const sql = `
+		SELECT title, emoji
+		FROM students 
+		WHERE id IN (${placeholders})
+	`;
+	const rows = db.prepare(sql).all(...studentIds);
+	return new Map(rows.map(row => [row.title.replaceAll(' ', '_').replace(/[^a-zA-Z0-9_]/g, ''), row.emoji]));
+};
+
 module.exports = {
 	get1Stars,
 	get2Stars,
 	get3Stars,
+	getStudentEmojis,
 };

@@ -1,4 +1,4 @@
 -- SQLite
-SELECT student_id
-FROM banner_student
-WHERE banner_id == 1
+SELECT title, emoji
+FROM students 
+WHERE id IN (1,2,3,4)
